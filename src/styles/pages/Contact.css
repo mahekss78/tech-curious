@@ -1,0 +1,373 @@
+/* =====================
+   CONTACT PAGE LAYOUT
+===================== */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+  margin-top: 2rem;
+}
+
+/* =====================
+   PAGE HEADER WITH ANIMATED PATTERN
+===================== */
+.page-header {
+  background: linear-gradient(135deg, 
+    rgba(15, 23, 42, 0.95) 0%,
+    rgba(30, 41, 59, 0.9) 100%),
+    url('../../assets/images/bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 5rem 0;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, 
+    rgba(59, 130, 246, 0.15) 0%,
+    rgba(139, 92, 246, 0.15) 50%,
+    rgba(236, 72, 153, 0.15) 100%);
+  z-index: 1;
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-header h1 {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, 
+    #3b82f6 0%,
+    #8b5cf6 50%,
+    #ec4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gradientShift 8s ease infinite;
+  background-size: 200% 200%;
+  display: inline-block;
+}
+
+@keyframes gradientShift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.page-header p {
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* =====================
+   CONTACT FORM SECTION
+===================== */
+.contact-form-section {
+  background: white;
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.contact-form-section h2 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.contact-form-section > p {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* =====================
+   CONTACT INFO SECTION
+===================== */
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.contact-cards-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* =====================
+   CONTACT CARD
+===================== */
+.contact-card {
+  position: relative;
+  height: 180px;
+  border-radius: 16px;
+  padding: 1.6rem;
+  color: #ffffff;
+  cursor: pointer;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+}
+
+/* =====================
+   CONTACT CARD ICON
+===================== */
+.contact-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.8rem;
+}
+
+.contact-card-icon img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.contact-card-icon img:hover {
+  filter: invert(0.9);
+}
+
+/* =====================
+   CARD TEXT
+===================== */
+.contact-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.contact-card p {
+  font-size: 0.82rem;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* =====================
+   CARD THEMES
+===================== */
+.contact-card.email { background: linear-gradient(135deg, #9333ea); }
+.contact-card.phone { background: linear-gradient(135deg, #9333ea); }
+.contact-card.location { background: linear-gradient(135deg,#9333ea); }
+
+/* =====================
+   FAQ SECTION
+===================== */
+.faq-section h2 {
+  margin-bottom: 1.6rem;
+  color: var(--text-color);
+  font-size: 1.75rem;
+}
+
+.faq-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+
+.faq-item {
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.faq-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.faq-question {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  color: var(--text-color);
+}
+
+.faq-answer {
+  font-size: 0.94rem;
+  color: var(--text-light);
+  line-height: 1.6;
+}
+
+/* =====================
+   SOCIAL MEDIA SECTION
+===================== */
+.social-section {
+  position: relative;
+}
+
+.social-wrapper {
+  position: relative;
+  padding: 0.75rem;
+  border-radius: 18px;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.35);
+}
+
+.social-icons {
+  display: flex;
+  align-items: flex-end;
+  gap: 0.75rem;
+  padding: 0.25rem;
+}
+
+.social-card {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.35);
+}
+
+.social-card img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+  filter: invert(1);
+}
+
+.social-card:hover {
+  transform: translateY(-10px) scale(1.12);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.6);
+  filter: invert(0.9);
+}
+
+.social-icons:hover .social-card:not(:hover) {
+  transform: scale(0.9);
+  filter: blur(4px);
+  opacity: 0.75;
+}
+
+/* SOCIAL CARD COLORS */
+.social-github { background: linear-gradient(135deg, #1f2933, #020617); }
+.social-linkedin { background: linear-gradient(135deg, #2563eb, #1e40af); }
+.social-youtube { background: linear-gradient(135deg, #dc2626, #991b1b); }
+.social-discord { background: linear-gradient(135deg, #6366f1, #4338ca); }
+.social-instagram { 
+  background: linear-gradient(135deg, 
+    #833ab4 0%, 
+    #fd1d1d 50%, 
+    #fcb045 100%
+  ); 
+}
+/* =====================
+   RESPONSIVE
+===================== */
+@media (max-width: 1024px) {
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .contact-form-section {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 2.5rem;
+  }
+  
+  .page-header h1 {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .page-header {
+    padding: 4rem 0;
+  }
+  
+  .page-header h1 {
+    font-size: 2.5rem;
+  }
+  
+  .page-header p {
+    font-size: 1.1rem;
+    padding: 0 1rem;
+  }
+  
+  .contact-form-section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .social-icons {
+    justify-content: center;
+    gap: 0.6rem;
+  }
+
+  .social-card {
+    width: 52px;
+    height: 52px;
+  }
+
+  .social-card img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .contact-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-card {
+    height: 165px;
+  }
+  
+  .page-header h1 {
+    font-size: 2rem;
+  }
+  
+  .page-header p {
+    font-size: 1rem;
+  }
+  
+  .contact-form-section {
+    padding: 1.5rem;
+  }
+}

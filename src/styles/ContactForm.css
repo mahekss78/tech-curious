@@ -1,0 +1,144 @@
+/* ------------------------------
+   Font & Base Styles
+------------------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+* {
+  font-family: 'Inter', sans-serif;
+  box-sizing: border-box;
+}
+
+/* ---------- Container ---------- */
+.contact-form-container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+
+/* ---------- Form ---------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* ---------- Form Group ---------- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-label {
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ---------- Icon Styles ---------- */
+.form-icon {
+  font-size: 1.2rem;
+  transition: transform 0.3s;
+}
+.form-icon.name-icon { color: #3b82f6; }
+.form-icon.email-icon { color: #10b981; }
+.form-icon.info-icon { color: #f59e0b; }
+.form-icon.subject-icon { color: #8b5cf6; }
+.form-icon.message-icon { color: #ef4444; }
+
+/* ---------- Inputs ---------- */
+.form-input,
+.form-select,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  font-size: 0.95rem;
+  color: #111827;
+  background-color: #ffffff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input:focus,
+.form-select:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+}
+
+.form-textarea { resize: vertical; min-height: 120px; }
+
+/* ---------- Error States ---------- */
+.form-group.error .form-input,
+.form-group.error .form-textarea { border-color: #ef4444; }
+.error-message { font-size: 0.85rem; color: #ef4444; margin-top: 0.4rem; }
+
+/* ---------- Character Counter ---------- */
+.char-count { align-self: flex-end; font-size: 0.8rem; color: #6b7280; }
+
+/* ---------- Buttons ---------- */
+.form-actions { margin-top: 1rem; text-align: center; }
+.btn {
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.btn-primary {
+  background-color: #3b82f6;
+  color: #ffffff;
+  transition: background 0.3s;
+}
+.btn-primary:hover { background-color: #2563eb; }
+.btn-primary:disabled { background-color: #93c5fd; cursor: not-allowed; }
+
+/* ---------- Info Note ---------- */
+.form-note {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: #6b7280;
+  display: flex;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+/* ---------- Success State ---------- */
+.form-success-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2.5rem;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.06);
+}
+.success-title {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #16a34a;
+  margin-bottom: 1rem;
+}
+.success-message { color: #374151; margin-bottom: 2rem; }
+.success-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  .contact-form-container { padding: 1.5rem; }
+  .btn { width: 100%; }
+  .success-actions { flex-direction: column; }
+}
